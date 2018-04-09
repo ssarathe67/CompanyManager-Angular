@@ -1,0 +1,66 @@
+<!-- Header -->
+<div class="header clearfix">
+	<h3 class="text-muted">Add New company</h3>
+</div>
+<div id="companyForm">
+	<form #form="ngForm" (ngSubmit)="addCompany(form.value, form.valid)" novalidate>
+		<div class="row">
+			<div class="col-2">Company Name:</div>
+			<div class="col-4">
+				<input type="text" name="companyName" class="form-control"
+					placeholder="Enter Company Name" 
+					[(ngModel)]="company.companyName" #companyName="ngModel"
+					[ngClass]="{'has-danger': ((companyName.touched && companyName.required)
+				           || (companyName.invalid  && form.submitted )) }"
+					required
+					>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">Company Phone No:</div>
+			<div class="col-4">
+				<input type="text" name="companyPhoneNo" class="form-control"
+					placeholder="Enter Company Phone Number Max(10)"
+					[(ngModel)]="company.companyPhoneNo"  #companyPhoneNo="ngModel"
+					[ngClass]="{'has-danger': ((companyPhoneNo.touched && companyPhoneNo.required)
+				           || (companyPhoneNo.invalid  && form.submitted )) }"
+				    appOnlyNumber="true"
+				    maxlength="10"
+					required
+					>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">Company CEO:</div>
+			<div class="col-4">
+				<input type="text" name="companyCEO" class="form-control"
+					placeholder="Enter Company CEO" [(ngModel)]="company.companyCEO" #companyCEO="ngModel"
+					[ngClass]="{'has-danger': ((companyCEO.touched && companyCEO.required)
+				           || (companyCEO.invalid  && form.submitted )) }"
+					required
+					>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">Founded Year:</div>
+			<div class="col-4">
+				<input type="text" name="foundedYear" class="form-control"
+					placeholder="Enter Company Founded Year - YYYY"
+					[(ngModel)]="company.foundedYear" #foundedYear="ngModel"
+					[ngClass]="{'has-danger': ((foundedYear.touched && foundedYear.required)
+				           || (foundedYear.invalid  && form.submitted )) }"
+				    appOnlyNumber="true"
+				    maxlength="4"
+					required
+					>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-4">
+				<input type="submit" value="Submit" class="btn btn-primary">
+			</div>
+		</div>
+
+	</form>
+</div>

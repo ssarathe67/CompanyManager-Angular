@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    	<i class="fa fa-building-o" aria-hidden="true"></i>
+                        Manage Company
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="listAllCompanies">List All Companies</a>
+                </li>
+                <li>
+                    <a routerLink="addNewComoany">Add New Company</a>
+                </li>
+                <li>
+                    <a routerLink="about">About Saurabh</a>
+                </li>
+            </ul>
+            <div class="footer">Developed By <br><strong>Saurabh Sarathe</strong>.</div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+        	<div class="container-fluid">
+        	<router-outlet></router-outlet>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->

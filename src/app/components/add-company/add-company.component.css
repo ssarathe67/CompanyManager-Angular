@@ -1,0 +1,6 @@
+#companyForm .row{
+	padding-top:10px;
+}
+.has-danger{
+	border:1px solid red;
+}
